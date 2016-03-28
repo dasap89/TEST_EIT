@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+       ul { list-style-type: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Test for ElifTech</h1>
+    
+    {% for item, info, sum in annotated_list %}
+      {% if info.open %}
+          <ul><li>
+      {% else %}
+          </li><li>
+      {% endif %}
+
+           {{ item.name }} | {{ item.earnings }} {% if sum != None %} | {{ sum }} {% endif %}
+
+        {% for close in info.close %}
+          </li></ul>
+        {% endfor %}
+    {% endfor %}
+    <button>Add new company</button>
+    <button>Delete company</button>
+    <button>Edit company</button>
+  </body>
+</html>
