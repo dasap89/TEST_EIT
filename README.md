@@ -9,7 +9,7 @@ To start using this project you need:
 
 3. Install pip
 
-4. $ pip install -r req.txt
+4. $ pip install -r requirements.txt
 
 5. $ python manage.py migrate
 
