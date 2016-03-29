@@ -13,6 +13,6 @@ To start using this project you need:
 
 5. $ python manage.py migrate
 
-6. python manage.py runserver
+6. $ python manage.py runserver
 
 7. go to http://localhost:8000/index/
