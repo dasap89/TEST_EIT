@@ -19,5 +19,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^index/', 'comp_struct.views.index', name='index'),
+    url(r'^add/', 'comp_struct.views.add', name='add'),
+    url(r'^dele/', 'comp_struct.views.dele', name='dele'),
+    url(r'^edit/', 'comp_struct.views.edit', name='edit'),
     url(r'^admin/', admin.site.urls),
 ]

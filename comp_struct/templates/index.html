@@ -5,6 +5,42 @@
     </style>
   </head>
   <body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#add").click(function(){
+        $.ajax({url: "/add/",
+            data: { parent: $("#parent").val(), name: $("#add_name").val(), earnings: $("#add_earnings").val() },
+            success: function(result){
+            alert("Data changed. Refresh the page to see result.");
+        }});
+    });
+});
+
+$(document).ready(function(){
+    $("#dele").click(function(){
+        $.ajax({url: "/dele/",
+            data: { name: $("#dele_name").val()},
+            success: function(result){
+            alert("Data changed. Refresh the page to see result.");
+        }});
+    });
+});
+
+$(document).ready(function(){
+    $("#edit").click(function(){
+        $.ajax({url: "/edit/",
+            data: { name: $("#old_name").val(),  new_name: $("#new_name").val(), new_earnings: $("#new_earnings").val()},
+            success: function(result){
+            alert("Data changed. Refresh the page to see result.");
+        }});
+    });
+});
+
+</script>
+
+
     <h1>Test for ElifTech</h1>
     
     {% for item, info, sum in annotated_list %}
@@ -20,8 +56,40 @@
           </li></ul>
         {% endfor %}
     {% endfor %}
-    <button>Add new company</button>
-    <button>Delete company</button>
-    <button>Edit company</button>
+    <div id="div_add">
+        <h3>Add new company.</h3>
+        <label for="parent">Parent company:</label>
+        <input type="text" name="" id="parent"/>
+        <br>
+        <label for="add_new">New company:</label>
+        <input type="text" name="" id="add_name"/>
+        <br>
+        <label for="add_earnings">Earnings for new company:</label>
+        <input type="text" name="" id="add_earnings"/>
+        <br>
+        <button id="add">Add new company</button>
+        <br>
+    </div>
+    <div id="div_dele">
+        <h3>Enter name of company which you want to delete. <span style="color: red;">Warning: If company has children or descendants it will be deleted too.</span></h3>
+        <label for="dele_name">Delete company:</label>
+        <input type="text" name="" id="dele_name"/>
+        <br>
+        <button id="dele">Delete company</button>
+        <br>
+    </div>
+    <div id="div_edit">
+        <h3>Enter name of company which you want to edit. </h3>
+        <label for="old_name">Current name of company:</label>
+        <input type="text" name="" id="old_name"/>
+        <br>
+        <label for="new_name">New name of company:</label>
+        <input type="text" name="" id="new_name"/>
+        <br>
+        <label for="new_earnings">New earnings of company:</label>
+        <input type="text" name="" id="new_earnings"/>
+        <br>
+        <button id="edit">Edit company</button>
+    </div>
   </body>
 </html>
