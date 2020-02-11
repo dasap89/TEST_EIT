@@ -1,4 +1,4 @@
-Django==1.9
+Django==1.11.28
 pep8
 Pillow==2.3.0
 argparse==1.2.1
