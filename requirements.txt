@@ -1,6 +1,6 @@
 Django==1.9
 pep8
-Pillow==2.3.0
+Pillow==8.2.0
 argparse==1.2.1
 chardet==2.0.1
 configobj==4.7.2
